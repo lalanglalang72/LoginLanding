@@ -1,0 +1,34 @@
+﻿<Window x:Class="LoginPage.View.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginPage.View"
+        mc:Ignorable="d"
+        Title="Register" Height="600" Width="450">
+    <Grid>
+        <StackPanel Margin="25">
+            <Image Source="/Assets/mii.png" Width="96" Height="96"/>
+            <Border Background="White" Margin="5 10" CornerRadius="5">
+                <StackPanel Margin="50">
+                    <Label Content="Name:" />
+                    <TextBox Name="textName" Margin="15"/>
+                    <TextBlock Name="NameErrorMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
+                    <Label Content="Email:" />
+                    <TextBox Name="textEmail" Margin="15"  />
+                    <TextBlock Name="EmailErrorMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
+                    <Label Content="Password:" />
+                    <PasswordBox Name="textPassword" Margin="15" />
+                    <TextBlock Name="PasswordErrorMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
+                    <Label Content="Confirm Password:" />
+                    <PasswordBox Name="confirmPassword" Margin="15" />
+                    <TextBlock Name="ValidationPasswordErrorMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Margin="10 " Name="Cancel" Click="Cancel_Click" Content="Cancel"/>
+                        <Button Margin="10" Name="Sign_Up" Click="Sign_Up_Click" Content="Sign Up"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

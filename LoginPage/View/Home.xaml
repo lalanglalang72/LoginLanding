@@ -1,0 +1,22 @@
+﻿<Window x:Class="LoginPage.View.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginPage.View"
+        mc:Ignorable="d"
+        Title="Home" Height="600" Width="450">
+    <Grid>
+        <StackPanel Margin="50">
+            <Border Margin="10 20" CornerRadius="10" Background="White">
+                <StackPanel Margin="5">
+                    <TextBlock Name="WelcomeMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Black" TextAlignment="Center"></TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Margin="35 35 35 35" Content="UPDATE" Background="#FF1A477E" Name="Update" Click="Update_Click"></Button>
+                        <Button Margin="35 35 35 35" Content="SIGN OUT" Background="#FF1A477E" Name="SignOut" Click="SignOut_Click"></Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>
