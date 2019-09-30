@@ -23,12 +23,13 @@ namespace LoginPage
     /// </summary>
     public partial class MainWindow : Window
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
         public MainWindow()
         {
             InitializeComponent();
+
         }
-       
+
         private void Sign_Up_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -40,8 +41,9 @@ namespace LoginPage
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
             UserController CallUser = new UserController();
-
-            if(textEmail.Text.Length==0&&textPassword.Password.Length==0)
+            Properties.Settings.Default.Email = textEmail.Text;
+            Properties.Settings.Default.Save();
+            if (textEmail.Text.Length == 0 && textPassword.Password.Length == 0)
             {
                 EmailErrorMessage.Text = "You Must Enter Valid Email";
                 PasswordErrorMessage.Text = "You MUst Enter Valid Password";
@@ -63,11 +65,22 @@ namespace LoginPage
                 string email = textEmail.Text;
                 string password = textPassword.Password;
 
-                CallUser.UserLogin(email, password);
-                this.Hide();
-                Home home = new Home(email);
-                home.Show();
+                var status = CallUser.UserLogin(email, password);
+                if (status == true)
+                {
+                    this.Hide();
+                    Home home = new Home(email);
+                    home.Show();
+                }
+
             }
+
+        }
+
+       
+        private void RememberMe_Checked(object sender, RoutedEventArgs e)
+        {
+            textEmail.Text = Properties.Settings.Default.Email;
         }
     }
 }

@@ -5,7 +5,6 @@ c:\users\user\documents\visual studio 2015\Projects\LoginPage\LoginPage\bin\Debu
 c:\users\user\documents\visual studio 2015\Projects\LoginPage\LoginPage\bin\Debug\EntityFramework.SqlServer.dll
 c:\users\user\documents\visual studio 2015\Projects\LoginPage\LoginPage\bin\Debug\EntityFramework.xml
 c:\users\user\documents\visual studio 2015\Projects\LoginPage\LoginPage\bin\Debug\EntityFramework.SqlServer.xml
-c:\users\user\documents\visual studio 2015\Projects\LoginPage\LoginPage\obj\Debug\LoginPage.csprojResolveAssemblyReference.cache
 c:\users\user\documents\visual studio 2015\Projects\LoginPage\LoginPage\obj\Debug\App.g.cs
 c:\users\user\documents\visual studio 2015\Projects\LoginPage\LoginPage\obj\Debug\LoginPage_MarkupCompile.cache
 c:\users\user\documents\visual studio 2015\Projects\LoginPage\LoginPage\obj\Debug\LoginPage_MarkupCompile.lref
@@ -23,3 +22,4 @@ C:\Users\User\Documents\Visual Studio 2015\Projects\LoginPage\LoginPage\obj\Debu
 C:\Users\User\Documents\Visual Studio 2015\Projects\LoginPage\LoginPage\obj\Debug\View\Register.baml
 C:\Users\User\Documents\Visual Studio 2015\Projects\LoginPage\LoginPage\obj\Debug\View\Update.baml
 C:\Users\User\Documents\Visual Studio 2015\Projects\LoginPage\LoginPage\obj\Debug\LoginPage.Migrations.addingmodelmasteruser.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\LoginPage\LoginPage\obj\Debug\LoginPage.csprojResolveAssemblyReference.cache

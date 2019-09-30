@@ -17,6 +17,7 @@
                     <Label Content="Password:" />
                     <PasswordBox Name="textPassword" Margin="15" />
                     <TextBlock Name="PasswordErrorMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
+                    <CheckBox Name="RememberMe" Margin="10 20" Content="Remember me" Checked="RememberMe_Checked"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
                         <Button Margin="35 35 35 35" Content="SIGN IN" Background="#FF1A477E" Name="SignIn" Click="SignIn_Click"></Button>

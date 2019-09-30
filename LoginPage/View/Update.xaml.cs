@@ -1,4 +1,6 @@
-﻿using LoginPage.Controller;
+﻿using LoginPage.Context;
+using LoginPage.Controller;
+using LoginPage.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,16 +22,27 @@ namespace LoginPage.View
     /// </summary>
     public partial class Update : Window
     { 
-        public string Guname;
-    public Update(string uname)
+        public string Lemail;
+        public string Gname;
+        public Update(string Gemail)
         {
             InitializeComponent();
-            UnameSetter(uname);
-            textName.Text = uname;
+            UnameSetter(Gemail);
+            GnameGetter(Gemail);
+            textEmail.Text = Gemail;
+            textName.Text = Gname;
         }
-        public void UnameSetter(string uname)
+        public void UnameSetter(string Gemail)
         {
-            Guname = uname;
+            Lemail = Gemail;
+        }
+
+        public void GnameGetter(string Gemail)
+        {
+            Users user = new Users();
+            MyContext _context = new MyContext();
+            var get = _context.Users.Where(u => u.Email == Gemail).FirstOrDefault<Users>();
+            Gname = get.Name;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -65,17 +78,20 @@ namespace LoginPage.View
                 string password = textPassword.Password;
                 string email = textEmail.Text;
 
-                CallUser.ChangePassword(username, email, password);
+                CallUser.ChangePassword(email, username, password);
+
                 this.Hide();
-                Home home = new Home(username);
+                Home home = new Home(email);
                 home.Show();
+              
+                
             }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Home home = new Home(Guname);
+            Home home = new Home(Lemail);
             home.Show();
         }
     }

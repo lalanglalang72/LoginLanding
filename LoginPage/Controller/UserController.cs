@@ -35,12 +35,14 @@ namespace LoginPage.Controller
             }
         }
 
-        public void UserLogin(string uname, string password)
+        public bool UserLogin(string uname, string password)
         {
-            Users user = new Model.Users();
+            var status = true;
+            Users user = new Users();
             MyContext _context = new MyContext();
+           
 
-            var get = _context.Users.Where(u => u.Name == uname).FirstOrDefault<Users>();
+            var get = _context.Users.Where(u => u.Email == uname).FirstOrDefault<Users>();
 
             if (get == null)
             {
@@ -51,6 +53,7 @@ namespace LoginPage.Controller
                 if (get.Password != password)
                 {
                     MessageBox.Show("Your Password is Incorrect!");
+                    status = false;
                 }
                 else
                 {
@@ -61,16 +64,18 @@ namespace LoginPage.Controller
                     //home.Show();
                 }
             }
+            return status;
         }
 
-        public void ChangePassword(string name, string email, string password)
+        public void ChangePassword(string email, string name, string password)
         {
+            
             var result = 0;
 
             Users user = new Users();
             MyContext _context = new MyContext();
 
-            var get = _context.Users.Where(u => u.Name == name).FirstOrDefault<Users>();
+            var get = _context.Users.Where(u => u.Email == email).FirstOrDefault<Users>();
 
            if (get == null)
             {
@@ -98,6 +103,7 @@ namespace LoginPage.Controller
                     MessageBox.Show("Your Password can't be the same!");
                 }
             }
+        
         }
     }
 }

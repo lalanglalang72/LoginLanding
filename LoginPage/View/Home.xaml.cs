@@ -20,7 +20,7 @@ namespace LoginPage.View
     /// </summary>
     public partial class Home : Window
     {
-        public string Guname;
+        public string Gemail;
         public Home(string email)
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace LoginPage.View
         private void Update_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Update update = new Update(Guname);
+            Update update = new Update(Gemail);
             update.Show();
         }
 
@@ -44,7 +44,7 @@ namespace LoginPage.View
         }
         public void UnameSetter(string uname)
         {
-            Guname = uname;
+            Gemail = uname;
         }
     }
 }
